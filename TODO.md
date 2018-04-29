@@ -5,5 +5,6 @@ coverage report
 comments/godoc
 roadmap section
 Makefile?
-rename files
-support a region param?
+rename files and packages?
+remove windows build option
+clean up version passing around
