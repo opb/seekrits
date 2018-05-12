@@ -1,10 +1,10 @@
 VERSION := $(shell git describe --tags --always --dirty="-dev")
 LDFLAGS := -ldflags='-X "main.Version=$(VERSION)"'
+GT := $GITHUB_TOKEN
 
 release: gh-release dist
-	@echo $$(GITHUB_TOKEN)
 	github-release release \
-	--security-token $$(GITHUB_TOKEN) \
+	--security-token $(GT) \
 	--user opb \
 	--repo seekrits \
 	--tag $(VERSION) \
