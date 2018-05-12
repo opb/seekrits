@@ -2,9 +2,9 @@ VERSION := $(shell git describe --tags --always --dirty="-dev")
 LDFLAGS := -ldflags='-X "main.Version=$(VERSION)"'
 
 release: gh-release dist
-	echo $$GITHUB_TOKEN
+	echo $(GITHUB_TOKEN)
 	github-release release \
-	--security-token $$GITHUB_TOKEN \
+	--security-token $(GITHUB_TOKEN) \
 	--user segmentio \
 	--repo chamber \
 	--tag $(VERSION) \
