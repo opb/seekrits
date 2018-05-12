@@ -8,7 +8,7 @@ release: gh-release dist
 	--user opb \
 	--repo seekrits \
 	--tag $(VERSION) \
-	--name $(VERSION
+	--name $(VERSION)
 
 dist: clean
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build $(LDFLAGS) -v -o dist/seekrits-$(VERSION)-darwin-amd64
