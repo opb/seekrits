@@ -1,6 +1,6 @@
 VERSION := $(shell git describe --tags --always --dirty="-dev")
 LDFLAGS := -ldflags='-X "main.Version=$(VERSION)"'
-GT := $GITHUB_TOKEN
+GT := $$GITHUB_TOKEN
 
 release: gh-release dist
 	github-release release \
